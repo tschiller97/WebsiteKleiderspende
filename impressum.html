@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impressum</title>
+    <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    h2 {
+      font-size: 28px;
+      font-weight: bold;
+      color: #00adb5;
+      display: flex;
+      align-items: center;
+    }
+    h1 img {
+      margin-right: 10px;
+      width: 200px;
+      height: auto;
+    }
+    .welcomeMessage {
+      font-family: "Arial", sans-serif;
+      font-size: 30px;
+      line-height: 1.5;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .sidebar {
+      width: 200px;
+      background-color: #f1f1f1;
+      padding: 10px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      overflow: auto;
+      z-index: 1;
+    }
+    .sidebar img.logo  {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    .content {
+      margin-left: 200px;
+      padding: 10px;
+    }
+
+    /* Stil für die globalen Navigationslinks */
+    .sidebar a {
+      display: block;
+      margin-bottom: 10px;
+      color: #333;
+      text-decoration: none;
+    }
+
+    /* Stil für die aufgeklappten Navigationslinks */
+    .sidebar a:hover {
+      color: #000;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+      }
+      .content {
+        margin-left: 0;
+        padding: 10px;
+      }
+    }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <img src="logo.png" alt="Logo" class="logo">
+        <a href="index.html">Startseite</a>
+        <a href="werwirsind.html">Wer wir sind</a>
+        <a href="registrieren.html">Registrieren</a>
+        <a href="vorOrtabgeben.html">Vor Ort abgeben</a>
+        <a href="krisenregionen.html">Krisenregionen</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="impressum.html">Impressum</a>
+      </div>
+    
+    <div class="container">
+      <h1>Impressum</h1>
+
+      <h2>Angaben gemäß § 5 TMG:</h2>
+      <p>Max Mustermann</p>
+      <p>Musterstraße 1</p>
+      <p>12345 Musterstadt</p>
+
+      <h2>Kontakt:</h2>
+      <p>E-Mail: info@example.com</p>
+      <p>Telefon: 01234-56789</p>
+
+      <h2>Vertretungsberechtigte Person:</h2>
+      <p>Max Mustermann</p>
+
+      <h2>Haftungsausschluss:</h2>
+      <p>Haftung für Inhalte</p>
+      <p>Haftung für Links</p>
+
+      <h2>Urheberrecht:</h2>
+      <p>Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht.</p>
+
+      <h2>Datenschutz:</h2>
+      <p>Weitere Informationen zum Datenschutz finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrierung</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    h2 {
+      font-size: 28px;
+      font-weight: bold;
+      color: #00adb5;
+      display: flex;
+      align-items: center;
+    }
+    h1 img {
+      margin-right: 10px;
+      width: 200px;
+      height: auto;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .form-group {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .form-group input[type="submit"] {
+      background-color: #00adb5;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .form-group.checkboxes input[type="checkbox"] {
+      margin-right: 5px;
+    }
+
+    /* Stil für die globale Navigation */
+    .sidebar {
+      width: 200px;
+      background-color: #f1f1f1;
+      padding: 10px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      overflow: auto;
+      z-index: 1;
+    }
+    .sidebar img.logo  {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    .content {
+      margin-left: 200px;
+      padding: 10px;
+    }
+
+    /* Stil für die globalen Navigationslinks */
+    .sidebar a {
+      display: block;
+      margin-bottom: 10px;
+      color: #333;
+      text-decoration: none;
+    }
+
+    /* Stil für die aufgeklappten Navigationslinks */
+    .sidebar a:hover {
+      color: #000;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+      }
+      .content {
+        margin-left: 0;
+        padding: 10px;
+      }
+    }
+    </style>
+  </style>
+</head>
+<body>
+  <!-- Globale Navigation -->
+  <div class="sidebar">
+    <img src="logo.png" alt="Logo" class="logo">
+    <a href="index.html">Startseite</a>
+    <a href="werwirsind.html">Wer wir sind</a>
+    <a href="registrieren.html">Registrieren</a>
+    <a href="vorOrtabgeben.html">Vor Ort abgeben</a>
+    <a href="krisenregionen.html">Krisenregionen</a>
+    <a href="datenschutz.html">Datenschutz</a>
+    <a href="impressum.html">Impressum</a>
+  </div>
+
+  <!-- Rest des Inhalts der Webseite -->
+  <div class="container">
+    <h1><img src="Logo.png" alt="Logo" style="width: 200px;"></h1>
+    <h2>Registrierung</h2>
+    
+    <p>Bitte fülle alle Felder aus und klicke anschließend auf "Absenden"</p>
+    
+    <form onsubmit="return ueberpruefeForm()">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">E-Mail:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="adresse">Straße und Hausnummer:</label>
+        <input type="adresse" id="adresse" name="adresse" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="postleitzahl">Postleitzahl:</label>
+        <input type="text" id="postleitzahl" name="postleitzahl" required>
+        <small id="postleitzahlError" style="color: red;"></small>
+      </div>
+      <div class="form-group">
+        <label for="kleider">Beschreibung der Kleider, die ich spenden möchte(Jacke, Hose, Pulli, T-shirt):</label>
+        <input type="text" id="kleider" name="kleider" required>
+      </div>
+      <div class="form-group">
+        <label for="country">Krisenregion:</label>
+        <select id="country" name="country">
+          <option value="Ukraine">Ukraine</option>
+          <option value="Italien">Italien</option>
+          <option value="Irak">Irak</option>
+          <option value="Syrien">Syrien</option>
+        </select>
+      </div>
+
+    
+
+
+
+
+      <div class="form-group checkboxes">
+        <input type="checkbox" id="selber" name="selber">
+        <label for="selber">Ich bringe meine Kleidung selbst vorbei</label>
+        <br>
+        <input type="checkbox" id="abholung" name="abholung">
+        <label for="abholung">Bitte die Kleidung bei mir Zuhause abholen</label>
+      </div>
+
+      <div class="form-group">
+        <input type="submit" value="Absenden">
+      </div>
+    </form>
+  </div>
+  <script>
+    function ueberpruefeForm() {
+      var abholungCheckbox = document.getElementById('abholung');
+      var postleitzahlInput = document.getElementById('postleitzahl');
+      var errorElement = document.getElementById('postleitzahlError');
+      var hinterlegtePLZ = '89359';
+      var eingabePLZ = postleitzahlInput.value.substr(0, 2);
+      
+      if (abholungCheckbox.checked && eingabePLZ !== hinterlegtePLZ.substr(0, 2)) {
+        errorElement.textContent = 'Deine Adresse liegt leider nicht in unserem Einzugsgebiet, bitte bringe deine Kleider selbst vorbei.';
+        return false;
+      } else {
+        errorElement.textContent = '';
+
+        var form = document.querySelector('form');
+        var formData = new FormData(form);
+        var params = new URLSearchParams(formData).toString();
+        window.location.href = "registrierungErfolgreich.html?" + params;
+        return false;
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wer wir sind</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      font-size: 28px;
+      font-weight: bold;
+      color: #00adb5;
+      display: flex;
+      align-items: center;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .form-group {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .form-group input[type="submit"] {
+      background-color: #48d1CC;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .sidebar {
+      width: 200px;
+      background-color: #f1f1f1;
+      padding: 10px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      overflow: auto;
+      z-index: 1;
+    }
+    .sidebar img.logo  {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    .content {
+      margin-left: 200px;
+      padding: 10px;
+    }
+
+    /* Stil für die globalen Navigationslinks */
+    .sidebar a {
+      display: block;
+      margin-bottom: 10px;
+      color: #333;
+      text-decoration: none;
+    }
+
+    /* Stil für die aufgeklappten Navigationslinks */
+    .sidebar a:hover {
+      color: #000;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+      }
+      .content {
+        margin-left: 0;
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Globale Navigation -->
+  <div class="sidebar">
+    <img src="logo.png" alt="Logo" class="logo">
+    <a href="index.html">Startseite</a>
+    <a href="werwirsind.html">Wer wir sind</a>
+    <a href="registrieren.html">Registrieren</a>
+    <a href="vorOrtabgeben.html">Vor Ort abgeben</a>
+    <a href="krisenregionen.html">Krisenregionen</a>
+    <a href="datenschutz.html">Datenschutz</a>
+    <a href="impressum.html">Impressum</a>
+  </div>
+
+  <div class="container">
+    <h1><img src="Logo.png" alt="Logo" style="width: 200px;"></h1>
+    <h1>Wer wir sind</h1>
+    <P>Herzlich Willkommen und schön, dass ihr den Weg auf unsere Seite gefunden habt! <br>
+        Wir sind ein Verein, bestehend aus 10 Personen, die sich der Logistik und Organisation von Kleiderspenden verschrieben haben. <br>
+        Wir wollen Menschen in Krisenregionen unterstützen und dabei helfen in ihrer Notlage wieder etwas Fuß zu fassen. <br>
+        Das schaffen wir aber nicht alleine... <br>
+        Hierbei sind wir auf eure Hilfe angewiesen! <br>
+        Registriert jetzt eure Kleiderspende und lasst sie durch unser neues Abholfahrzeug bei euch direkt Zuhause abholen. <br>
+        Ihr kommt an unserer Geschäftsstelle in Kleinkötz vorbei? - Sehr gut! dann dürft ihr uns eure Kleidung auch direkt vorbei bringen. Hierfür haben wir im Eingangsbereich ein Tablet platziert, mit dem ihr eure Spende schnell registrieren könnt! <br>
+        Ihr habt bei uns die Möglichkeit selbst zu entscheiden, in welche Krisenregion ihr eure Kleidung spendet. Schaut euch dazu gerne unter dem Reiter "Unsere Krisenregionen" die verfügbaren Regionen an. <br>
+        Wir bedanken uns bereits im Vorraus für eure Spenden! <br>
+        Liebe Grüße, <br>
+        Euer Krisenkleider-Team.
+    </P>
+  </div>
+</body>
+</html>
